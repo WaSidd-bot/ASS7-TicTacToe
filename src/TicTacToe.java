@@ -6,7 +6,6 @@ public class TicTacToe {
 
         for (int row = 0; row < variableArray.length; row++) {
             for (int col = 0; col < variableArray.length; col++) {
-                // drawBoard[row][col] = " ";
                 System.out.print("[" + variableArray[row][col] + "]");
             }
             System.out.println();
@@ -75,8 +74,8 @@ public class TicTacToe {
         for (row = 0; row < drawArray.length; row++) {
             for (col = 0; col < drawArray.length; col++) {
                 if (drawArray[row][col] == " ") {
-                return false;
-                }  
+                    return false;
+                }
             }
         }
 
@@ -85,8 +84,6 @@ public class TicTacToe {
 
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int row = 0;
-        int col = 0;
         int playerRowMove;
         int playerColMove;
         boolean checkForWin = false;
@@ -95,11 +92,16 @@ public class TicTacToe {
 
         System.out.println("Hello operator, welcome to TicTacToe!");
         System.out.println("Please read the rules below and enjoy your game!");
+        System.out.println(" - Player 1 will be x, and player two will be o, taking turns after eachother.");
+        System.out.println(
+                " - A win occurs when either player fills out out a row, column or diagonal with their letter on the game field.");
+        System.out.println(" - A draw occurs when all spaces are filled out by the players.");
+        System.out.println(" - Most importantly, Have fun.");
 
         String[][] markArray = new String[3][3];
 
-        for (row = 0; row < markArray.length; row++) {
-            for (col = 0; col < markArray.length; col++) {
+        for (int row = 0; row < markArray.length; row++) {
+            for (int col = 0; col < markArray.length; col++) {
                 markArray[row][col] = " ";
                 System.out.print("[" + markArray[row][col] + "]");
             }
@@ -130,6 +132,7 @@ public class TicTacToe {
 
             if (checkForWin == true) {
                 System.out.println("Player 1 wins the game, player 2 git gud");
+                scan.close();
                 break;
             }
 
@@ -137,6 +140,7 @@ public class TicTacToe {
 
             if (checkForDraw == true) {
                 System.out.println("Draw!");
+                scan.close();
                 break;
             }
 
@@ -164,6 +168,7 @@ public class TicTacToe {
 
             if (checkForWin == true) {
                 System.out.println("Player 2 wins the game, player 1 git gud");
+                scan.close();
                 break;
             }
 
@@ -171,6 +176,7 @@ public class TicTacToe {
 
             if (checkForDraw == true) {
                 System.out.println("Draw!");
+                scan.close();
                 break;
             }
         }
