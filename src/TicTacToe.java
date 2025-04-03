@@ -16,51 +16,37 @@ public class TicTacToe {
         // all x wins
         if (winArray[0][0] == "x" && winArray[1][0] == "x" && winArray[2][0] == "x") {
             return true;
-        }
-        if (winArray[0][1] == "x" && winArray[1][1] == "x" && winArray[2][1] == "x") {
+        } else if (winArray[0][1] == "x" && winArray[1][1] == "x" && winArray[2][1] == "x") {
             return true;
-        }
-        if (winArray[0][2] == "x" && winArray[1][2] == "x" && winArray[2][2] == "x") {
+        } else if (winArray[0][2] == "x" && winArray[1][2] == "x" && winArray[2][2] == "x") {
             return true;
-        } // vertical x wins
-        if (winArray[0][0] == "x" && winArray[0][1] == "x" && winArray[0][2] == "x") {
+        } else if (winArray[0][0] == "x" && winArray[0][1] == "x" && winArray[0][2] == "x") {
             return true;
-        }
-        if (winArray[1][0] == "x" && winArray[1][1] == "x" && winArray[1][2] == "x") {
+        } else if (winArray[1][0] == "x" && winArray[1][1] == "x" && winArray[1][2] == "x") {
             return true;
-        }
-        if (winArray[2][0] == "x" && winArray[2][1] == "x" && winArray[2][2] == "x") {
+        } else if (winArray[2][0] == "x" && winArray[2][1] == "x" && winArray[2][2] == "x") {
             return true;
-        } // diagonals
-        if (winArray[0][0] == "x" && winArray[1][1] == "x" && winArray[2][2] == "x") {
+        } else if (winArray[0][0] == "x" && winArray[1][1] == "x" && winArray[2][2] == "x") { // diagonal x wins
             return true;
-        }
-        if (winArray[0][2] == "x" && winArray[1][1] == "x" && winArray[2][0] == "x") {
+        } else if (winArray[0][2] == "x" && winArray[1][1] == "x" && winArray[2][0] == "x") {
             return true;
         }
         // all o wins
         if (winArray[0][0] == "o" && winArray[1][0] == "o" && winArray[2][0] == "o") {
             return true;
-        }
-        if (winArray[0][1] == "o" && winArray[1][1] == "o" && winArray[2][1] == "o") {
+        } else if (winArray[0][1] == "o" && winArray[1][1] == "o" && winArray[2][1] == "o") {
             return true;
-        }
-        if (winArray[0][2] == "o" && winArray[1][2] == "o" && winArray[2][2] == "o") {
+        } else if (winArray[0][2] == "o" && winArray[1][2] == "o" && winArray[2][2] == "o") {
             return true;
-        } // vertical x wins
-        if (winArray[0][0] == "o" && winArray[0][1] == "o" && winArray[0][2] == "o") {
+        } else if (winArray[0][0] == "o" && winArray[0][1] == "o" && winArray[0][2] == "o") {
             return true;
-        }
-        if (winArray[1][0] == "o" && winArray[1][1] == "o" && winArray[1][2] == "o") {
+        } else if (winArray[1][0] == "o" && winArray[1][1] == "o" && winArray[1][2] == "o") {
             return true;
-        }
-        if (winArray[2][0] == "o" && winArray[2][1] == "o" && winArray[2][2] == "o") {
+        } else if (winArray[2][0] == "o" && winArray[2][1] == "o" && winArray[2][2] == "o") {
             return true;
-        } // diagonals
-        if (winArray[0][0] == "o" && winArray[1][1] == "o" && winArray[2][2] == "o") {
+        } else if (winArray[0][0] == "o" && winArray[1][1] == "o" && winArray[2][2] == "o") { // diagonal o wins
             return true;
-        }
-        if (winArray[0][2] == "o" && winArray[1][1] == "o" && winArray[2][0] == "o") {
+        } else if (winArray[0][2] == "o" && winArray[1][1] == "o" && winArray[2][0] == "o") {
             return true;
         }
 
@@ -96,7 +82,7 @@ public class TicTacToe {
         System.out.println(
                 " - A win occurs when either player fills out out a row, column or diagonal with their letter on the game field.");
         System.out.println(" - A draw occurs when all spaces are filled out by the players.");
-        System.out.println(" - Most importantly, Have fun.");
+        System.out.println(" - Most importantly, Have fun!");
 
         String[][] markArray = new String[3][3];
 
@@ -109,81 +95,134 @@ public class TicTacToe {
         }
 
         while (true) {
+            // player 1 turn
             while (notValid == true) {
-                System.out.println("Player 1, enter your row move: (0 1 2)");
-                playerRowMove = scan.nextInt();
-                System.out.println("Player 1, enter your column move: (0 1 2)");
-                playerColMove = scan.nextInt();
+                while (true) {
+                    System.out.println("Player 1, enter your row - column move: (0 1 2)");
+                    playerRowMove = scan.nextInt();
+
+                    switch (playerRowMove) {
+                        case 0:
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            System.out.println("Enter an input inside the array, please.");
+                            continue;
+                    }
+
+                    playerColMove = scan.nextInt();
+
+                    switch (playerColMove) {
+                        case 0:
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            System.out.println("Enter an input inside the array, please.");
+                            continue;
+                    }
+
+                    break;
+
+                }
 
                 if (markArray[playerRowMove][playerColMove] == " ") {
                     notValid = false;
                     markArray[playerRowMove][playerColMove] = "x";
 
                 } else {
-                    System.out.println("wrong move dummy");
+                    System.out.println("Invalid move");
+                }
+
+                notValid = true;
+
+                gameField(markArray);
+
+                checkForWin = winCheck(markArray);
+
+                if (checkForWin == true) {
+                    System.out.println("Player 1 wins the game");
+                    scan.close();
+                    break;
+                }
+
+                checkForDraw = drawCheck(markArray);
+
+                if (checkForDraw == true) {
+                    System.out.println("Draw!");
+                    scan.close();
+                    break;
+                }
+
+                // player 2 turn
+                while (notValid == true) {
+                    while (true) {
+                        System.out.println("Player 2, enter your row - column move: (0 1 2)");
+                        playerRowMove = scan.nextInt();
+
+                        switch (playerRowMove) {
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            default:
+                                System.out.println("Enter an input inside the array, please.");
+                                continue;
+                        }
+
+                        playerColMove = scan.nextInt();
+
+                        switch (playerColMove) {
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            default:
+                                System.out.println("Enter an input inside the array, please.");
+                                continue;
+                        }
+
+                        break;
+                    }
+
+                    if (markArray[playerRowMove][playerColMove] == " ") {
+                        notValid = false;
+                        markArray[playerRowMove][playerColMove] = "o";
+                    } else {
+                        System.out.println("Invalid move");
+                    }
+                }
+
+                notValid = true;
+
+                gameField(markArray);
+
+                checkForWin = winCheck(markArray);
+
+                if (checkForWin == true) {
+                    System.out.println("Player 2 wins the game");
+                    scan.close();
+                    break;
+                }
+
+                checkForDraw = drawCheck(markArray);
+
+                if (checkForDraw == true) {
+                    System.out.println("Draw!");
+                    scan.close();
+                    break;
                 }
             }
-
-            notValid = true;
-
-            gameField(markArray);
-
-            checkForWin = winCheck(markArray);
-
-            if (checkForWin == true) {
-                System.out.println("Player 1 wins the game, player 2 git gud");
-                scan.close();
-                break;
-            }
-
-            checkForDraw = drawCheck(markArray);
-
-            if (checkForDraw == true) {
-                System.out.println("Draw!");
-                scan.close();
-                break;
-            }
-
-            // player 2 turn
-            while (notValid == true) {
-                System.out.println("Player 2, enter your row move: (0 1 2)");
-                playerRowMove = scan.nextInt();
-                System.out.println("Player 2, enter your column move: (0 1 2)");
-                playerColMove = scan.nextInt();
-
-                if (markArray[playerRowMove][playerColMove] == " ") {
-                    notValid = false;
-                    markArray[playerRowMove][playerColMove] = "o";
-
-                } else {
-                    System.out.println("wrong move dummy");
-                }
-            }
-
-            notValid = true;
-
-            gameField(markArray);
-
-            checkForWin = winCheck(markArray);
-
-            if (checkForWin == true) {
-                System.out.println("Player 2 wins the game, player 1 git gud");
-                scan.close();
-                break;
-            }
-
-            checkForDraw = drawCheck(markArray);
-
-            if (checkForDraw == true) {
-                System.out.println("Draw!");
-                scan.close();
-                break;
-            }
+            break;
         }
     }
 }
-
-// horizontal wins, vertical win, diagonal win
-// diagonal win is easiest
-// 16 win conditions
-// winCheck takes 2D array
