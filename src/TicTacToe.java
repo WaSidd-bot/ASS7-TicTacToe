@@ -128,7 +128,6 @@ public class TicTacToe {
                     }
 
                     break;
-
                 }
 
                 if (markArray[playerRowMove][playerColMove] == " ") {
