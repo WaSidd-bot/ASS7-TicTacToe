@@ -98,8 +98,9 @@ public class TicTacToe {
             // player 1 turn
             while (notValid == true) {
                 while (true) {
-                    System.out.println("Player 1, enter your row - column move: (0 1 2)");
-                    playerRowMove = scan.nextInt();
+                    System.out.println("Player 1, enter your whole number row - column move: (0 1 2)");
+                    double playerRow = scan.nextDouble();
+                    playerRowMove = (int) playerRow;
 
                     switch (playerRowMove) {
                         case 0:
@@ -113,7 +114,8 @@ public class TicTacToe {
                             continue;
                     }
 
-                    playerColMove = scan.nextInt();
+                    double playerCol = scan.nextDouble();
+                    playerColMove = (int) playerCol;
 
                     switch (playerColMove) {
                         case 0:
@@ -161,8 +163,9 @@ public class TicTacToe {
                 // player 2 turn
                 while (notValid == true) {
                     while (true) {
-                        System.out.println("Player 2, enter your row - column move: (0 1 2)");
-                        playerRowMove = scan.nextInt();
+                        System.out.println("Player 2, enter your whole number row - column move: (0 1 2)");
+                        double playerRow = scan.nextDouble();
+                        playerRowMove = (int) playerRow;
 
                         switch (playerRowMove) {
                             case 0:
@@ -176,7 +179,8 @@ public class TicTacToe {
                                 continue;
                         }
 
-                        playerColMove = scan.nextInt();
+                        double playerCol = scan.nextDouble();
+                        playerColMove = (int) playerCol;
 
                         switch (playerColMove) {
                             case 0:
